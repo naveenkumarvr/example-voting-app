@@ -1,0 +1,16 @@
+name: Build and SonarAnalysis
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-sonarqube-analysis:
+    name: Build and Sonarqube Analysis
+    runs-on: ['self-hosted', 'macOS', 'ARM64', 'nk-mac']
+    container:
+      image: ubuntu:latest
+    steps:
+    - name: Checkout
+      uses: action/checkout@v4
