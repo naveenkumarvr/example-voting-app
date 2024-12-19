@@ -1,0 +1,40 @@
+# Default values for helm-vote-app.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+#vote-Deploy
+voteImageName: dockersamples/examplevotingapp_vote
+voteContainerPort: 80
+#vote-svc
+voteSvcType: NodePort
+voteSvcPort: 8010
+voteSvcTargetPort: 80
+
+#Result Deploy
+resultImageName: dockersamples/examplevotingapp_result
+resultContainerPort: 80
+#Result SVC
+resultSvcType: NodePort
+resultSvcPort: 8011
+resultSvcTargetPort: 80
+
+#Redis Deploy
+redisImageName: redis:alpine
+redisContainerPort: 6379
+#Redis Service
+redisSvcType: ClusterIP
+redisSvcPort: 6379
+redisSvcTargetPort: 6379
+
+#DB Deploy
+dbImageName: postgres:15-alpine
+dbContainerPort: 5432
+#DB SVC
+dbSvcType: ClusterIP
+dbSvcPort: 5432
+dbSvcTargetPort: 5432
+
+#Worker Deploy
+workerImageName: dockersamples/examplevotingapp_worker
