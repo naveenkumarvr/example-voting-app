@@ -35,6 +35,8 @@ dbContainerPort: 5432
 dbSvcType: ClusterIP
 dbSvcPort: 5432
 dbSvcTargetPort: 5432
+#DB PVC
+storageClassName: hostpath
 
 #Worker Deploy
 workerImageName: dockersamples/examplevotingapp_worker

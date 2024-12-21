@@ -30,7 +30,8 @@ spec:
           name: postgres
         volumeMounts:
         - mountPath: /var/lib/postgresql/data
-          name: db-data
+          name: db-pvc-data
       volumes:
-      - name: db-data
-        emptyDir: {} 
+      - name: db-pvc-data
+        persistentVolumeClaim:
+          claimName: vote-app-db-pvc
